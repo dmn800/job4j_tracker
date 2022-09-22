@@ -12,9 +12,8 @@ public class Battery {
     }
 
     public void exchange(Battery another) {
-        int memory = this.load;
-        this.load -= memory;
-        another.load += memory;
+        another.load += this.load;
+        this.load = 0;
     }
 }
 
