@@ -37,4 +37,20 @@ class PointTest {
         double expected = 6.71;
         assertThat(a.distance(b)).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    public void when000to111then1dot73() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(1, 1, 1);
+        double expected = 1.73;
+        assertThat(a.distance3D(b)).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    public void when563to421then4dot58() {
+        Point a = new Point(5, 6, 3);
+        Point b = new Point(4, 2, 1);
+        double expected = 4.58;
+        assertThat(a.distance3D(b)).isEqualTo(expected, withPrecision(0.01));
+    }
 }
