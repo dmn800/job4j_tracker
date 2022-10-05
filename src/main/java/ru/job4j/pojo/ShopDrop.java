@@ -10,8 +10,6 @@ public class ShopDrop {
             System.out.println(products[i].getName());
         }
         System.out.println("");
-        //products[1] = products[2];
-        //products[2] = null;
         delete(products, 1);
         for (int i = 0; i < products.length; i++) {
             if (products[i] != null) {
