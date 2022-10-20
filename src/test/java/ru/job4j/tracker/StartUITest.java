@@ -117,7 +117,7 @@ public class StartUITest {
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
                         + "=== Show all items ===" + ln
-                        + "Item{id=1, name='test1', created=20.10.2022 22:30}" + ln
+                        + "Item{id=1, name='test1', created=20.10.2022}" + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
@@ -144,7 +144,7 @@ public class StartUITest {
                         + "0. Find item by name" + ln
                         + "1. Exit Program" + ln
                         + "=== Find item by name ===" + ln
-                        + "Item{id=1, name='test1', created=20.10.2022 22:30}" + ln
+                        + "Item{id=1, name='test1', created=20.10.2022}" + ln
                         + "Menu:" + ln
                         + "0. Find item by name" + ln
                         + "1. Exit Program" + ln
@@ -171,7 +171,7 @@ public class StartUITest {
                         + "0. Find item by ID" + ln
                         + "1. Exit Program" + ln
                         + "=== Find item by id ===" + ln
-                        + "Item{id=1, name='test1', created=20.10.2022 22:30}" + ln
+                        + "Item{id=1, name='test1', created=20.10.2022}" + ln
                         + "Menu:" + ln
                         + "0. Find item by ID" + ln
                         + "1. Exit Program" + ln
