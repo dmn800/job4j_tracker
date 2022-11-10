@@ -1,0 +1,12 @@
+package ru.job4j.exception;
+
+public class FactRec {
+    public static int calc(int n) {
+        return n == 0 || n == 1 ? 1 : calc(n - 1) * n;
+    }
+
+    public static void main(String[] args) {
+        int rsl = calc(4);
+        System.out.println(rsl);
+    }
+}
