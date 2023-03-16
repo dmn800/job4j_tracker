@@ -1,6 +1,13 @@
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.tracker.action.*;
+import ru.job4j.tracker.input.StubInput;
+import ru.job4j.tracker.intface.Input;
+import ru.job4j.tracker.intface.Output;
+import ru.job4j.tracker.intface.UserAction;
+import ru.job4j.tracker.output.StubOutput;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StartUITest {

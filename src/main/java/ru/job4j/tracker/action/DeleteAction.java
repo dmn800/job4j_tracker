@@ -1,4 +1,9 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.action;
+
+import ru.job4j.tracker.intface.Input;
+import ru.job4j.tracker.intface.Output;
+import ru.job4j.tracker.Tracker;
+import ru.job4j.tracker.intface.UserAction;
 
 public class DeleteAction implements UserAction {
     private final Output out;

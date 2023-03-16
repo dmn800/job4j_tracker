@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.intface;
 
 public interface Input {
     String askStr(String question);
