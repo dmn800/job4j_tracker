@@ -44,7 +44,6 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
 
-        //String passwordCheck = password.toLowerCase();
         if (password.toLowerCase().contains("qwerty")
                     || password.toLowerCase().contains("12345")
                     || password.toLowerCase().contains("password")
