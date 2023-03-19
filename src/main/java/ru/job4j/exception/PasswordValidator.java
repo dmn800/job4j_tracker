@@ -12,46 +12,47 @@ public class PasswordValidator {
         }
 
         char[] passwordChar = password.toCharArray();
-        boolean upper = false;
-        boolean lower = false;
-        boolean digit = false;
-        boolean symbol = false;
+        boolean upper = true;
+        boolean lower = true;
+        boolean digit = true;
+        boolean symbol = true;
         for (char word : passwordChar) {
             if (Character.isUpperCase(word)) {
-                upper = true;
+                upper = false;
+                continue;
             }
             if (Character.isLowerCase(word)) {
-                lower = true;
+                lower = false;
+                continue;
             }
             if (Character.isDigit(word)) {
-                digit = true;
+                digit = false;
+                continue;
             }
             if (!Character.isLetterOrDigit(word)) {
-                symbol = true;
+                symbol = false;
             }
 
         }
-        if (!upper) {
+        if (upper) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
-        if (!lower) {
+        if (lower) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
         }
-        if (!digit) {
+        if (digit) {
             throw new IllegalArgumentException("Password should contain at least one figure");
         }
-        if (!symbol) {
+        if (symbol) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
 
-        if (password.toLowerCase().contains("qwerty")
-                    || password.toLowerCase().contains("12345")
-                    || password.toLowerCase().contains("password")
-                    || password.toLowerCase().contains("admin")
-                    || password.toLowerCase().contains("user")) {
-            throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+        String[] valid = {"qwerty", "12345", "password", "admin", "user"};
+        for (int i = 0; i < valid.length; i++) {
+            if (password.toLowerCase().contains(valid[i])) {
+                throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+            }
         }
-
         return password;
     }
 
