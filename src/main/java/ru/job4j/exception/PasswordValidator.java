@@ -12,38 +12,38 @@ public class PasswordValidator {
         }
 
         char[] passwordChar = password.toCharArray();
-        boolean upper = true;
-        boolean lower = true;
-        boolean digit = true;
-        boolean symbol = true;
+        boolean upper = false;
+        boolean lower = false;
+        boolean digit = false;
+        boolean symbol = false;
         for (char word : passwordChar) {
             if (Character.isUpperCase(word)) {
-                upper = false;
-                continue;
+                upper = true;
             }
             if (Character.isLowerCase(word)) {
-                lower = false;
-                continue;
+                lower = true;
             }
             if (Character.isDigit(word)) {
-                digit = false;
-                continue;
+                digit = true;
             }
             if (!Character.isLetterOrDigit(word)) {
-                symbol = false;
+                symbol = true;
+            }
+            if (upper && lower && digit && symbol) {
+                break;
             }
 
         }
-        if (upper) {
+        if (!upper) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
-        if (lower) {
+        if (!lower) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
         }
-        if (digit) {
+        if (!digit) {
             throw new IllegalArgumentException("Password should contain at least one figure");
         }
-        if (symbol) {
+        if (!symbol) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
 
