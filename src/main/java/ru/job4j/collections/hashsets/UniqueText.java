@@ -12,7 +12,6 @@ public class UniqueText {
         }
 
         for (String t : text) {
-            System.out.println(t);
             if (!check.contains(t)) {
                 rsl = false;
                 break;
