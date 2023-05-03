@@ -30,13 +30,9 @@ public class AnalyzeByMap {
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> label = new ArrayList<>();
         Map<String, Integer> map = new LinkedHashMap<>();
-        int value = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (map.get(subject.name()) != null) {
-                    value = map.get(subject.name());
-                }
-                map.put(subject.name(), value + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : map.keySet()) {
@@ -64,13 +60,9 @@ public class AnalyzeByMap {
     public static Label bestSubject(List<Pupil> pupils) {
         List<Label> label = new ArrayList<>();
         Map<String, Integer> map = new LinkedHashMap<>();
-        int value = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (map.get(subject.name()) != null) {
-                    value = map.get(subject.name());
-                }
-                map.put(subject.name(), value + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : map.keySet()) {
