@@ -25,7 +25,7 @@ class JobTest {
                 new Job("Reboot server", 1),
                 new Job("X task", 0)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -43,7 +43,7 @@ class JobTest {
                 new Job("Impl task", 2),
                 new Job("Fix bugs", 4)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -61,7 +61,7 @@ class JobTest {
                 new Job("Impl task", 2),
                 new Job("Fix bugs", 4)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -79,7 +79,7 @@ class JobTest {
                 new Job("Reboot server", 1),
                 new Job("X task", 0)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -107,7 +107,7 @@ class JobTest {
                 new Job("Reboot server", 1),
                 new Job("X task", 0)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -135,7 +135,7 @@ class JobTest {
                 new Job("Fix bugs", 2),
                 new Job("Fix bugs", 0)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -163,7 +163,7 @@ class JobTest {
                 new Job("Fix bugs", 3),
                 new Job("Fix bugs", 4)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 
     @Test
@@ -191,6 +191,6 @@ class JobTest {
                 new Job("X task", 0),
                 new Job("Fix bugs", 0)
         );
-        assertThat(jobs.toString()).isEqualTo(expected.toString());
+        assertThat(jobs).isEqualTo(expected);
     }
 }
