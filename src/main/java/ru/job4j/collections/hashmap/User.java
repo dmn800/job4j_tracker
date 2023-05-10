@@ -2,8 +2,20 @@ package ru.job4j.collections.hashmap;
 
 import java.util.Objects;
 
+/**
+ * Класс для описания модели пользователя банка
+ * Модель содержит поля: номер паспорта и ФИО пользователя
+ * @author DMITRIY NEFEDEV
+ * @version 1.0
+ */
 public class User {
+    /**
+     * Номер паспорта пользователя (идентификатор пользователя)
+     */
     private String passport;
+    /**
+     * ФИО пользователя
+     */
     private String username;
 
     public User(String passport, String username) {

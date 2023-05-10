@@ -2,8 +2,20 @@ package ru.job4j.collections.hashmap;
 
 import java.util.Objects;
 
+/**
+ * Класс для описания модели банковского счета
+ * Модель содержит поля: реквизиты счета и его баланс
+ * @author DMITRIY NEFEDEV
+ * @version 1.0
+ */
 public class Account {
+    /**
+     * Номер лицевого счета пользователя
+     */
     private String requisite;
+    /**
+     * Текущий баланс на лицевом счете пользователя
+     */
     private double balance;
 
     public Account(String requisite, double balance) {
