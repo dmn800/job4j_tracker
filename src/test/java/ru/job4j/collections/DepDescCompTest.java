@@ -1,7 +1,6 @@
-package ru.job4j.collections.sort;
+package ru.job4j.collections;
 
 import org.junit.jupiter.api.Test;
-import ru.job4j.collections.DepDescComp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
