@@ -1,8 +1,7 @@
 package ru.job4j.tracker.input;
 
 import org.junit.jupiter.api.Test;
-import ru.job4j.tracker.intface.Input;
-import ru.job4j.tracker.intface.Output;
+import ru.job4j.tracker.output.Output;
 import ru.job4j.tracker.output.StubOutput;
 
 import static org.assertj.core.api.Assertions.assertThat;

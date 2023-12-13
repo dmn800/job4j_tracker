@@ -1,4 +1,4 @@
-package ru.job4j.tracker.intface;
+package ru.job4j.tracker.output;
 
 public interface Output {
     void println(Object obj);

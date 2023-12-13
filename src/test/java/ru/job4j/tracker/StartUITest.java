@@ -3,9 +3,9 @@ package ru.job4j.tracker;
 import org.junit.jupiter.api.Test;
 import ru.job4j.tracker.action.*;
 import ru.job4j.tracker.input.StubInput;
-import ru.job4j.tracker.intface.Input;
-import ru.job4j.tracker.intface.Output;
-import ru.job4j.tracker.intface.UserAction;
+import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.output.Output;
+import ru.job4j.tracker.action.UserAction;
 import ru.job4j.tracker.output.StubOutput;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class StartUITest {
         );
         Tracker tracker = new Tracker();
         List<UserAction> actions = List.of(
-                new CreateAction(out),
+                new Create(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -37,7 +37,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), "New item name", "1"}
         );
         List<UserAction> actions = List.of(
-                new ReplaceAction(out),
+                new Replace(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -53,7 +53,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         List<UserAction> actions = List.of(
-                new DeleteAction(out),
+                new Delete(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -89,7 +89,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         List<UserAction> actions = List.of(
-                new ReplaceAction(out),
+                new Replace(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -116,7 +116,7 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         List<UserAction> actions = List.of(
-                new ShowAllAction(out),
+                new ShowAll(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -143,7 +143,7 @@ public class StartUITest {
                 new String[] {"0", "test1", "1"}
         );
         List<UserAction> actions = List.of(
-                new FindByNameAction(out),
+                new FindByName(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -170,7 +170,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(one.getId()), "1"}
         );
         List<UserAction> actions = List.of(
-                new FindByIdAction(out),
+                new FindById(out),
                 new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);

@@ -1,14 +1,13 @@
 package ru.job4j.tracker.action;
 
 import ru.job4j.tracker.*;
-import ru.job4j.tracker.intface.Input;
-import ru.job4j.tracker.intface.Output;
-import ru.job4j.tracker.intface.UserAction;
+import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.output.Output;
 
-public class CreateAction implements UserAction {
+public class Create implements UserAction {
     private final Output out;
 
-    public CreateAction(Output out) {
+    public Create(Output out) {
         this.out = out;
     }
 

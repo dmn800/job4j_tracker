@@ -3,9 +3,9 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.action.*;
 import ru.job4j.tracker.input.ConsoleInput;
 import ru.job4j.tracker.input.ValidateInput;
-import ru.job4j.tracker.intface.Input;
-import ru.job4j.tracker.intface.Output;
-import ru.job4j.tracker.intface.UserAction;
+import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.output.Output;
+import ru.job4j.tracker.action.UserAction;
 import ru.job4j.tracker.output.ConsoleOutput;
 
 import java.util.List;
@@ -43,9 +43,9 @@ public class StartUI {
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         List<UserAction> actions = List.of(
-                new CreateAction(output), new ShowAllAction(output),
-                new ReplaceAction(output), new DeleteAction(output),
-                new FindByIdAction(output), new FindByNameAction(output),
+                new Create(output), new ShowAll(output),
+                new Replace(output), new Delete(output),
+                new FindById(output), new FindByName(output),
                 new Exit(output)
         );
         new StartUI(output).init(input, tracker, actions);
