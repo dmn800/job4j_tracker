@@ -20,7 +20,7 @@ public class SqlTracker implements Store {
 
     private void init() {
         try (InputStream input = SqlTracker.class.getClassLoader()
-                .getResourceAsStream("app.properties")) {
+                .getResourceAsStream("db/liquibase.properties")) {
             Properties config = new Properties();
             config.load(input);
             Class.forName(config.getProperty("driver-class-name"));
@@ -67,7 +67,7 @@ public class SqlTracker implements Store {
                 "UPDATE items SET name = ?, created = ? WHERE id = ?")) {
             statement.setString(1, item.getName());
             statement.setTimestamp(2, Timestamp.valueOf(item.getDateTime()));
-            statement.setInt(3, item.getId());
+            statement.setInt(3, id);
             result = statement.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
@@ -133,11 +133,13 @@ public class SqlTracker implements Store {
                 "SELECT * FROM items WHERE id = ?")) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
-            item = new Item(
-                    resultSet.getInt("id"),
-                    resultSet.getString("name"),
-                    resultSet.getTimestamp("created").toLocalDateTime()
-            );
+            while (resultSet.next()) {
+                item = new Item(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getTimestamp("created").toLocalDateTime()
+                );
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
