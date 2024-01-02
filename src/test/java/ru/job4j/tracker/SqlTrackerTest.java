@@ -130,4 +130,21 @@ class SqlTrackerTest {
         assertThat(tracker.findById(id)).isNull();
     }
 
+    @Test
+    public void whenDeleteThanTableIsNotNull() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item bug1 = new Item();
+        bug1.setName("Bug1");
+        tracker.add(bug1);
+        Item bug2 = new Item();
+        bug2.setName("Bug2");
+        tracker.add(bug2);
+        Item bug3 = new Item();
+        bug3.setName("Bug3");
+        tracker.add(bug3);
+        int id1 = bug1.getId();
+        tracker.delete(id1);
+        assertThat(tracker.findAll().size()).isGreaterThan(0);
+    }
+
 }
